@@ -1,0 +1,15 @@
+
+   Result: Assignment 4
+   Name: Paul Kafka
+
+I tested my Binary search tree code by using a simple test 
+driver porgram which used the BST. I check for the following errors:
+	1) The data was being inserted
+	2) The data was adhering to the BST rules
+	3) The BST printed preorder traversal correctly
+To test the perfromance of the code, I used "#include <sys/time.h>". 
+With this I was able to see the time at which the program executed
+different function and how it ran. I used it on Assignment 3 to compare
+to Assignment 4 and the results were as expected. Assignment 4 had better
+times. A BST was just faster then a link list at searching (which is used
+a lot). 

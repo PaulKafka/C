@@ -1,0 +1,9 @@
+
+   Development log: Assignment 2
+   Name: Paul Kafka
+
+Sep 22, 2012: Made the Vector.h class
+Sep 23, 2012: Made the Stack.h class
+Sep 24, 2012: Tested the two classes with a driver program I made. And it works.
+Sep 25, 2012: Made the main.cpp recursive program.
+Sep 26, 2012: Made the analysis pdf.

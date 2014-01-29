@@ -1,0 +1,7 @@
+
+   Development log: Assignment 3
+   Name: Paul Kafka
+
+Oct 18, 2012: I made a generic stl list class by studying the code from the textbook.
+Oct 19, 2012: I changed my list class to the self organizing one specified.
+Oct 20, 2012: I tried fixing a few mistakes that I made from Assignment 1. I turned it in.

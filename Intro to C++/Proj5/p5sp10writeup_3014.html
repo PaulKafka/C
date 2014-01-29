@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <meta name="GENERATOR"
+ content="Mozilla/4.77 [en] (Windows NT 5.0; U) [Netscape]">
+  <meta name="Author" content="Ann Ford Tyson">
+  <title>Programming Project Specifications</title>
+	<style>
+<!--
+div.Section1
+	{page:Section1;}
+.style1 {
+	color: #66CC66;
+	font-weight: bold;
+	font-style: italic;
+}
+-->
+    </style>
+</head>
+<body>
+<h2>
+<hr width="100%"></h2>
+<center>
+<h2><font color="#009900">Programming Assignment 5: </font>Automated
+Exam Grader</h2>
+</center>
+<center>
+<h3>COP 3014 - Spring Term 2010&nbsp;<br>
+Point Value: 100 points&nbsp;<br>
+<font color="#993366">Project Due Date: Wednesday April 7, 2010<br>
+</font></h3>
+</center>
+<hr width="100%">
+<h3>Learning Objectives</h3>
+<ul>
+  <li>To write a program which requires the manipulation of
+one-dimensional arrays</li>
+  <li>To utilize parallel arrays</li>
+  <li>To set up array types using the typedef construct </li>
+  <li>To perform frequency counting and draw a histogram to represent
+	data</li>
+	<li>To perform text file input</li>
+	<li>To design a program on your own which is well-structured, modular, 
+	utilizing multiple functions and parameter passing appropriately</li>
+</ul>
+<h3>
+Problem Statement</h3>
+Your Xenobiology professor has decided to give you a completely True/False final exam. Since she discovered
+you
+are a C++ programmer, she has offered you extra credit if you will
+write
+a program to analyze the test data. This sounds good, so you have
+accepted
+the job.
+<p>Your task is to analyze the data file which contains the test answer
+key and each student's answers. To do this you will determine each
+student's
+test score and the mean for the entire class. Also you will generate a
+histogram using the test scores. There are exactly 25 students who took
+the exam.
+</p>
+<p>Calculate the mean exam score as the sum of all scores divided by the
+number
+of scores, as a real number.&nbsp; Display the mean in your output with 2 digits of precision. </p>
+<h3>
+Input</h3>
+The input file is named <span style="font-style: italic;">xfile.txt</span>,
+and is available from the course web site.&nbsp; You may hardcode this specific filename into your program.&nbsp; Download the file from the
+course web space into
+the same folder which contains your .cpp file.&nbsp; The
+file has the following format:
+<p>1st data line: the test answer key, in columns 1 thru 30 (there are
+exactly 30 questions on the test)
+</p>
+<p>Remaining data lines: a student name on one line, followed by the
+test
+answers recorded for that student on the
+next line. This pattern is repeated for all 25 students. The list is
+in alphabetical order by student name, and all data
+lines contain the required information starting in column one.
+</p>
+<p>Example data:
+</p>
+<p><tt>TFTFTFTFTFTFTFTFTFTFTFTFTFTFTF</tt>
+<br>
+<tt>Einstein, Albert</tt>
+<br>
+<tt>TFTFTFTFTFTFTFTFTFTFTFTFTFTFTF</tt>
+<br>
+<tt>Jones, Forgetfull</tt>
+<br>
+<tt>FTFTFTFTFTFTFTFTFTFTFTFTFTFTFT</tt>
+</p>
+<p>etc...<br>
+</p>
+<p>BAD DATA: the only bad data you are required to check for is test
+answers which are
+not
+the upper case letters 'T' or 'F'.&nbsp; If an&nbsp;
+invalid character is found, count the invalid character as a "wrong"
+answer, and continue processing the data line
+normally.&nbsp; However do print an error message as part of the output
+table which indicates what has occurred.&nbsp; You
+may assume that the test answer key is completely valid, and so are
+the student names.
+</p>
+<p>You are required to implement a check to see if the data file has
+opened
+successfully, and if it has not, your code must terminate the program
+with
+a descriptive error message. You may use either the return function and
+implement a second return in main (like the return (EXIT_FAILURE) shown
+in lecture 17), or you may use the exit function and exit from any
+function
+in the program, as shown in the same lecture.&nbsp;</p>
+<h3>Output</h3>
+<ul>
+  <li>Echoprinted input (some of which is included in items below).</li>
+  <li>A table giving the list of student names in the order they were
+read in,
+the test answers for that student, and the student's test score. This
+table
+will incorporate data error messages if needed.</li>
+  <li>The mean test score.</li>
+  <li>A histogram showing the number of students who received scores in
+the following
+ranges: 0 thru 5, 6 thru 10, 11 thru 15, 16 thru 20, 21 thru 25, and 25
+thru 30. The&nbsp; histogram should look something like this:<br>
+    <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<tt>
+Frequency</tt> <br>
+    <tt>&nbsp;&nbsp;&nbsp; ---------</tt>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+Score&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Obtained
+By&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+5&nbsp;&nbsp; 10&nbsp;&nbsp; 15&nbsp;&nbsp; 20&nbsp;&nbsp; 25</tt> <br>
+    <tt>&nbsp;&nbsp;&nbsp;&nbsp;
+-----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+-----------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+----|----|----|----|----|</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+0...5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+6...10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*******</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+11...15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**********</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+16...20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+***</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+21...25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**</tt> </p>
+    <p><tt>&nbsp;&nbsp;&nbsp;&nbsp;
+26...30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**</tt> </p>
+  </li>
+</ul>
+<h3>Data Structures</h3>
+This project is intended to familiarize you with the use of
+standard one-dimensional
+arrays, parallel arrays, and basic use of the string class in C++.&nbsp; You are required
+to
+use 
+one-dimensional arrays to store the
+test answer key (a one-dimensional array of char), the student's answers (a parallel one-dimensional array of char), and the frequency counts (a 
+one-dimensional array of int) required for the
+histogram.&nbsp;
+<p>Use a C++ string class object to read, store and print out each student's name.&nbsp; Use either a C-string or the string class to hard-code your file name, which should be a string <em>constant</em> in this program. </p>
+<p>You are <EM>required</EM> to use these core-language one-dimensional arrays and C++   string class objects in this project. <EM>You may not use</EM> any   two-dimensional arrays, structs or user-defined classes on this project.&nbsp; You   also <EM>may not use</EM> the C++ Standard Template Library classes or   algorithms with the exception of using the C++ string class to store and work   with the file name and student name string data in this program.</p>
+<p>You must use the <em>typedef</em> construct to create your array types for the exam answer arrays and for the frequency counting array. </p>
+<div class="Section1">
+	<h3>Use Of Functions and Program Modularity </h3>
+	<p class="MsoNormal">Part of your grade on this and all future course 
+	programming projects will be determined by&nbsp;how well you utilize functions 
+	and parameters appropriately.&nbsp; Start by working on a good design, structure 
+	chart, etc.&nbsp; Your program must represent a modular, functionally cohesive design following class style 
+	guidelines.&nbsp; You should have <em>at least</em> main plus four other functions in this program. 
+</div>
+<h3>What File To Turn In and How to Turn In Your Work using Blackboard<O:P></O:P></h3>
+<p class="MsoNormal">You must turn in your C++ program source file, which must be 
+named<span class="style1"> grades.cpp</span><br>
+<br>
+Be 100% certain you have <STRONG><EM>thoroughly</EM></STRONG> read the handout   entitled <STRONG><EM>"Submitting Your Program Assignments Electronically Using   Blackboard"</EM></STRONG> for complete instructions on how to submit and how to <STRONG>verify your submission</STRONG> after you submit it.&nbsp; This will help you   to avoid losing large numbers of project points due to improper submission   issues. This handout is available on the course web site under "Handouts."</p>
+<hr width="100%">
+Last Update: February 24, 2010, 2:15 PM, A.
+Ford Tyson<br>
+<hr width="100%">
+<br>
+&nbsp;
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+   Development log: Assignment 4
+   Name: Paul Kafka
+
+Nov 5, 2012: I made a binary search tree header file/class.
+Nov 6, 2012: I implemented my program using the BST I made.
+Nov 7, 2012: I finished up testing the code. It compiles. I made the result.txt. I turned it in.

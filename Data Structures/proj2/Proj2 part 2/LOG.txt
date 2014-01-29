@@ -1,0 +1,5 @@
+9/28/2012: Planning Tic Tac Toe Board, research minimax
+9/29/2012: Researched Minimax recursion
+9/30/2012: Attempt to create Tic Toe Board again
+9/31/2012: Created dynamic Tic Tac Toe Board
+10/1/2012: Started to make human/computer moves 

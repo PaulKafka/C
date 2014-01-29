@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<TITLE>Assignment 1</TITLE>
+</head>
+
+<body>
+<BLOCKQUOTE>
+<H1 align=center>Find the relevance of documents</H1>
+
+<p align=center><b>Due: 12 Sep 2012</b></p>
+
+<p><b>Educational objectives:</b> Review C++ material that you have learned, such as implementing classes, using templates, performing I/O, and command line arguments. Use of STL classes (which you will learn in Lecture 4) and algorithms. Use of makefiles. Use of a debugger. Use of optimization flags with <CODE>g++</CODE>. </p>
+
+<p><b>Statement of work:</b> Develop a software that uses STL classes and algorithms, such as (linked) <CODE>list</CODE> or <CODE>vector</CODE>,  to implement a simple document retrieval program, as described below. <STRONG>You must use at least one templated STL container and use its iterator</STRONG>.</p>
+
+<p><b>Deliverables:</b> Turn in a <CODE>makefile</CODE> and
+all header (*.h) and cpp (*.cpp) files that are needed to build your
+software. Turn in your development log too, which should be a plain ASCII text file called <CODE>LOG.txt</CODE> in your project directory. You will submit all of these as described in <a
+href="http://www.cs.fsu.edu/~asriniva/courses/DS12/HWinstructions.html">www.cs.fsu.edu/~asriniva/courses/DS12/HWinstructions.html</a>.  </p>
+
+<p><b>Requirements:</b></p>
+
+<ul>
+ <li>Create
+     a subdirectory called <CODE>proj1</CODE>.</li>
+ <li>You
+     will need to have a <CODE>makefile</CODE> in this directory. In addition, all the
+     header and cpp files needed to build your software must be present here, as well as the <CODE>LOG.txt</CODE> file.</li>
+ <li>You
+     should implement appropriate classes for the software. Your code should be well designed and object oriented. </li>
+  <li>Your software's main task is as follows. A user will give it queries consisting of a set of words. For each query, the software should give the most relevant documents that contain all words in that query.
+     </li>
+ <li>The
+     software is run by the user on the command
+     line, as follows:</li>
+ <ul>
+  <li><CODE>Retrieve Filename-List</CODE>, where  <CODE>Filename-List</CODE>  is a list of file names of zero or more ASCII text documents.</li>
+ </ul>
+
+ <li> The software first <EM>analyzes</EM> each file given on the command line. Details of the analysis are explained later. The software then waits for a series of user actions, and responds to each user action as described below. 
+  
+
+<P>Possible user actions and required software response:
+</li>
+
+ <ul>
+  <li><CODE>a Filename</CODE>: <EM>Analyze</EM> the ASCII text file <CODE>Filename</CODE>. If this file has already been analyzed previously, then replace the results of the previous analysis with the current one. If the file does not exist, then output <CODE>File Filename does not exist</CODE> to standard output (not to standard error).</li>
+
+  <li><CODE>q n Word-List</CODE>: <CODE>n</CODE> is a positive integer, and <CODE>Word-List</CODE> is a list of <EM>words</EM> (this is defined later) separated by one or more blanks. The software returns a list of the <CODE>n</CODE> most relevant documents containing all the words in <CODE>Word-List</CODE>. If fewer than <CODE>n</CODE> documents match the query, then all the matching documents are returned. Each line of the output will first give the name of a document, followed by a blank, followed by the document's <CODE>relevance</CODE>, which is a floating point number defined later. The documents are output in decreasing order of relevance (that is, most relevant document first). If no document matches, then output <CODE>No matching document</CODE> to standard output. 
+
+  <li><CODE>x</CODE>: Quit the program.</li>
+
+  <li>Output <CODE>Invalid comand</CODE> to standard output for any other command. </li>
+ </ul>
+
+
+ <P><li> <EM>Analysis</EM> of a document. In this process, the software will identify the set of <EM>words</EM> in the document. Each word will be given a floating point <EM>weight</EM>. The weight of a word is the ratio of the frequency of its occurrence to the total number of words in the document. You should store the weights of each word, of each document analyzed, in a suitable container.
+
+<P> A <EM>word</EM> is defined as a sequences of adjacent characters in the input file,
+ separated by any of the following delimiters: whitespace (blanks, tabs, and newlines) or any of the following <B><CODE>! ( ) - : ; " , . ? /</CODE></B>. (A delimiter cannot be a part of any word.)  Note that <CODE>abandon</CODE> and <CODE>Abandon</CODE> are different words, as are <CODE>car</CODE> and <CODE>car's</CODE>.  
+
+ <P><li> <EM>Relevance</EM> of a document. A document is relevant to a query only if it contains each word in the query. If a document contains each word in the query, then its relevance is defined as the sum of the weights, in this document, of all the words in the query.
+
+</ul>
+
+<p><b>Sample file and executable:</b> A sample executable and some example files are available in the ~cop4530/fall12/solutions/proj1 directory on linprog. The first person to find an error in our executable will get a bonus point!</p>
+
+<p><b>Bonus points:</b>
+
+<P> You will get 3 bonus points if your code is faster than our sample executable on some large tests which we will announce after the submission deadline. (Your code should also be correct.)
+
+<P> You may get up to 5 additional points for significant extra work, such as implementing more features (for example, determining that different forms of the same word, such as <CODE>serve</CODE>, <code>served</code>, <code>serving</code>, and <code>serves</code> are equivalent) or providing a GUI interface. Please obtain written permission from me prior to doing this. If you wish to get bonus points, then please submit your work as usual, but send an email to the John Nguyen. John will schedule a meeting with you, and you can demonstrate the special features of your software then.</p>
+
+<P><EM>Copyright: Ashok Srinivasan, Florida State University</EM>.
+
+<HR>
+<FONT -2>Last modified: 29 Aug 2012</FONT>
+</BLOCKQUOTE>
+</body>
+
+</html>

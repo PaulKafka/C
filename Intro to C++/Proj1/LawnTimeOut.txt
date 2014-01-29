@@ -1,0 +1,24 @@
+-------------------------------------------
+Welcome to the Lawn Mowing Time Calculator!
+-------------------------------------------
+
+Enter your name -> Fred Flintstone
+
+Hello Fred Flintstone! Let's do your calculations.
+
+Please enter all measurements in feet.
+  and the input values as whole numbers.
+
+Enter the width of the yard -> 105
+Enter the length of the yard -> 92
+
+Enter the width of the house -> 34
+Enter the length of the house -> 45
+
+The yard area to mow in square feet: 8130
+Time you will need to mow this lawn: 45 minutes and 10 seconds.
+
+------------------------------
+Program finished successfully.
+------------------------------
+Press any key to continue . . .

@@ -1,0 +1,13 @@
+
+   Development log: Assignment 1
+   Name: Paul Kafka
+
+Sep 7, 2012: Outlined the Project on paper with ideas. This took all day. Had to research STL conainers and Algorythems
+Sep 8, 2012: Wrote the header file for class: Relevance. And made a skeloton of the main program
+Sep 9, 2012: Finished writing the main program. Started writing the class implemination file.
+Sep 10, 2012: I kept writing the impplemination file. There are a lot of errors in my code.
+Sep 11, 2012: I finished writing my implemination file. All the code is written, so now its time to debug.
+Sep 12, 2012: I kept debugging my code. I couldnt finish in time to turn it in.
+Sep 13, 2012: I kept debugging my code. I was having trouble with the delimeter filtering for Analyze();
+Sept 14, 2012: I commented all over and organized my code well. I couldnt get the calculations correct.
+				The ddd Debugger was SUPER slow and laggy and served no purpose. I then turned the proj1 in.
